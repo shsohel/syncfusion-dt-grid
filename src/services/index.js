@@ -1,0 +1,13 @@
+// import  store  from '@store/storeConfig/store';
+import axios from "axios";
+
+export const baseAxios = axios.create( {
+    baseURL: 'http://192.168.0.18:9091/api/merchandising'
+} );
+
+
+const accessToken = "eyJhbGciOiJSUzI1NiIsImtpZCI6IjRKRER3RHNxNmgwRUV5STBDeXU4Y2ciLCJ0eXAiOiJhdCtqd3QifQ.eyJuYmYiOjE2NzA5Mjc3MTYsImV4cCI6MTY3MDk0NTcxNiwiaXNzIjoiaHR0cDovLzE5Mi4xNjguMC4xODo5MDkxIiwiYXVkIjoicXVhZHJpb25FcnBBUEkiLCJjbGllbnRfaWQiOiJxdWFkcmlvbi5jbGllbnQiLCJzdWIiOiJmYzBlYTU1Yy1jZDFhLTQ3N2UtYjlmYS0zN2E0YzA5M2M4ODIiLCJhdXRoX3RpbWUiOjE2NzA5Mjc3MTYsImlkcCI6ImxvY2FsIiwibmFtZSI6IkF6aW0gTWFobXVkIiwiZW1haWwiOiJtYWhhbXVkLmF6aW1AZ21haWwuY29tIiwic2NvcGUiOlsib3BlbmlkIiwicHJvZmlsZSIsInF1YWRyaW9uRXJwQVBJIl0sImFtciI6WyJmb3JtcyJdfQ.Je8sCvqiMogFitRijaPfC4e6Qi2-rmUaEpBvUiMadTd0ed4pLkvK9ye3gB6LP6AOQklY7yU6toMmwfNt9n2u-3rZQBuZT7dKlaElUSelobNT8QE3SSdk24bzjZPUClE6nM_OPxrOhv2AwHTcJdMKdbCy83lJ0uBAHWHCi_0GLzRXNcMJuBInKhiAWZSIf0Pgk-RHcdMDm3icujOtG5Om4l6EK-IO2-TcIGN88U-HBtPDVzSdmI2fJFuPw67CjZaOqFwU_05vniyLIuRfal9RdebdMqwcJv4kbVDy_s3symecoiQYKoAEjyPOToqixqhZc6wTATmrJJjKAuaOyCkfYQ"
+
+if ( accessToken ) {
+    baseAxios.defaults.headers.common['Authorization'] = `bearer ${accessToken}`;
+}

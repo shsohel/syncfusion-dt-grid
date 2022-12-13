@@ -10,7 +10,6 @@ const Layout = ( props ) => {
       <div className='main'>
         <Outlet context={{ hello: 'world' }} />
       </div>
-
     </div>
   );
 };

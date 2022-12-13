@@ -1,0 +1,2 @@
+
+export const GET_COSTINGS_BY_QUERY = "GET_COSTINGS_BY_QUERY";

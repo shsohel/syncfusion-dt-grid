@@ -120,12 +120,13 @@ function DataTable() {
         if ( props.requestType === "beginEdit" ) {
             console.log( gridInstance['isEdit'] );
             console.log( gridInstance )
-            gridInstance['isEdit'] = false
+            // props.cancel = true
         } else if ( props.requestType === "refresh" ) {
             //   console.log( console.log( 'props', JSON.stringify( props, null, 2 ) ) )
             console.log( gridInstance )
 
         } else {
+            props.cancel = true
             console.log( props )
             console.log( gridInstance )
 
@@ -136,7 +137,7 @@ function DataTable() {
     const editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true, allowEditOnDblClick: true, };
 
     const commands = [{ type: 'Edit', buttonOption: { iconCss: ' e-icons e-edit', cssClass: 'e-flat' } },
-    { type: 'Delete', buttonOption: { iconCss: 'e-icons e-delete', cssClass: 'e-flat', click: dataStateChange } },
+    { type: 'Delete', buttonOption: { iconCss: 'e-icons e-delete', cssClass: 'e-flat' } },
     { type: 'Save', buttonOption: { iconCss: 'e-icons e-update', cssClass: 'e-flat' } },
     { type: 'Cancel', buttonOption: { iconCss: 'e-icons e-cancel-icon', cssClass: 'e-flat' } }];
 
@@ -175,9 +176,11 @@ function DataTable() {
                 pageSettings={pageSettings}
                 height='400'
                 // dataSourceChanged={dataSourceChanged}
-                //  dataStateChange={dataStateChange.bind( this )}
+                dataStateChange={dataStateChange}
                 // pagerTemplate={pagerTemplate}
                 actionBegin={actionBegin.bind( this )}
+            //  dataSourceChanged={dataSourceChanged}
+            // dataSourceChanged={dataSourceChanged
 
 
             >
